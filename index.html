@@ -1,0 +1,684 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0" />
+  <title>JAYA VI JAYA NIRMAN | Luxury Turnkey Homes & Interiors</title>
+  <meta name="description" content="One Brand • Four Souls. Premium Construction, Luxury Interiors across Telangana and Andhra Pradesh." />
+  
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+  
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            gold: {
+              300: '#F0E0B2',
+              400: '#E8C87A',
+              500: '#D4AF37',
+              600: '#B8962E',
+            },
+            royal: {
+              950: '#050505',
+              900: '#0A0A0A',
+              800: '#111111',
+            }
+          },
+          fontFamily: {
+            serif: ['Cormorant Garamond', 'Georgia', 'serif'],
+            sans: ['Inter', 'system-ui', 'sans-serif'],
+          }
+        }
+      }
+    }
+  </script>
+
+  <style>
+    * { -webkit-tap-highlight-color: transparent; }
+    body {
+      font-family: 'Inter', system-ui, sans-serif;
+      background: #050505;
+      color: #F5F5F0;
+    }
+    .font-serif { font-family: 'Cormorant Garamond', Georgia, serif; }
+
+    .text-gold {
+      background: linear-gradient(135deg, #F5E6C8 0%, #D4AF37 40%, #B8962E 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+
+    .glass {
+      background: rgba(255, 255, 255, 0.025);
+      backdrop-filter: blur(24px);
+      border: 1px solid rgba(255, 255, 255, 0.05);
+    }
+    .glass-gold {
+      background: rgba(212, 175, 55, 0.04);
+      backdrop-filter: blur(24px);
+      border: 1px solid rgba(212, 175, 55, 0.12);
+    }
+
+    .btn-gold {
+      background: linear-gradient(135deg, #D4AF37 0%, #B8962E 100%);
+      color: #0A0A0A;
+      font-weight: 600;
+      letter-spacing: 0.04em;
+      transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+    .btn-gold:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 14px 40px rgba(212, 175, 55, 0.3);
+    }
+    .btn-outline {
+      border: 1px solid rgba(212, 175, 55, 0.35);
+      color: #D4AF37;
+      letter-spacing: 0.04em;
+      transition: all 0.3s ease;
+    }
+    .btn-outline:hover {
+      background: rgba(212, 175, 55, 0.08);
+      border-color: #D4AF37;
+    }
+
+    html { scroll-behavior: smooth; }
+    ::-webkit-scrollbar { width: 5px; }
+    ::-webkit-scrollbar-track { background: #050505; }
+    ::-webkit-scrollbar-thumb { background: #D4AF37; border-radius: 3px; }
+
+    #mobileMenu { display: none; }
+    #mobileMenu.open { display: flex; }
+
+    .line-gold {
+      width: 36px;
+      height: 1px;
+      background: linear-gradient(90deg, transparent, #D4AF37, transparent);
+    }
+
+    .project-card img { transition: transform 0.8s cubic-bezier(0.16, 1, 0.3, 1); }
+    .project-card:hover img { transform: scale(1.06); }
+
+    /* Calculator styles */
+    .pkg-option {
+      border: 1px solid rgba(255,255,255,0.08);
+      transition: all 0.25s ease;
+      cursor: pointer;
+    }
+    .pkg-option:hover { border-color: rgba(212,175,55,0.3); }
+    .pkg-option.selected {
+      border-color: #D4AF37;
+      background: rgba(212,175,55,0.08);
+    }
+    .pkg-option input { accent-color: #D4AF37; }
+
+    input[type="range"] {
+      -webkit-appearance: none;
+      width: 100%;
+      height: 4px;
+      background: rgba(255,255,255,0.1);
+      border-radius: 2px;
+      outline: none;
+    }
+    input[type="range"]::-webkit-slider-thumb {
+      -webkit-appearance: none;
+      width: 18px;
+      height: 18px;
+      border-radius: 50%;
+      background: #D4AF37;
+      cursor: pointer;
+      box-shadow: 0 0 10px rgba(212,175,55,0.4);
+    }
+  </style>
+</head>
+<body class="antialiased overflow-x-hidden">
+
+  <!-- NAVBAR -->
+  <nav class="fixed top-0 left-0 right-0 z-50 glass">
+    <div class="max-w-7xl mx-auto px-5 sm:px-8 h-16 sm:h-[72px] flex items-center justify-between">
+      
+      <a href="#" class="flex flex-col leading-none">
+        <span class="font-serif text-lg sm:text-xl tracking-wide text-gold">JAYA VI JAYA NIRMAN</span>
+        <span class="text-[9px] sm:text-[10px] tracking-[0.2em] uppercase text-white/35 mt-0.5">Turnkey Civil Contractor · Interior</span>
+      </a>
+
+      <div class="hidden lg:flex items-center gap-8 text-[11px] tracking-[0.15em] uppercase text-white/45">
+        <a href="#projects" class="hover:text-gold-400 transition-colors">Projects</a>
+        <a href="#services" class="hover:text-gold-400 transition-colors">Services</a>
+        <a href="#calculator" class="hover:text-gold-400 transition-colors">Cost Estimator</a>
+        <a href="#pricing" class="hover:text-gold-400 transition-colors">Pricing</a>
+        <a href="#contact" class="hover:text-gold-400 transition-colors">Contact</a>
+      </div>
+
+      <a href="https://wa.me/917386946326" target="_blank"
+         class="hidden sm:flex items-center gap-2 text-[11px] tracking-wider text-white/60 hover:text-gold-400 transition">
+        +91 73869 46326
+      </a>
+
+      <button id="menuBtn" class="lg:hidden p-2 text-white/60" aria-label="Menu">
+        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M4 6h16M4 12h16M4 18h16"/>
+        </svg>
+      </button>
+    </div>
+
+    <div id="mobileMenu" class="lg:hidden flex-col bg-[#050505]/98 border-t border-white/5 px-6 py-10 gap-6">
+      <a href="#projects" class="text-white/70 hover:text-gold-400 text-lg">Projects</a>
+      <a href="#services" class="text-white/70 hover:text-gold-400 text-lg">Services</a>
+      <a href="#calculator" class="text-white/70 hover:text-gold-400 text-lg">Cost Estimator</a>
+      <a href="#pricing" class="text-white/70 hover:text-gold-400 text-lg">Pricing</a>
+      <a href="#contact" class="text-white/70 hover:text-gold-400 text-lg">Contact</a>
+      <a href="https://wa.me/917386946326" target="_blank" class="mt-4 inline-flex items-center justify-center gap-2 bg-green-600 text-white py-3.5 rounded-full text-sm font-medium">
+        Chat on WhatsApp
+      </a>
+    </div>
+  </nav>
+
+  <!-- HERO -->
+  <section class="relative min-h-[100svh] flex items-center pt-24 pb-20 overflow-hidden">
+    <div class="absolute inset-0 pointer-events-none">
+      <div class="absolute top-1/4 left-1/2 -translate-x-1/2 w-[700px] h-[700px] bg-gold-500/[0.04] rounded-full blur-[140px]"></div>
+    </div>
+
+    <div class="relative max-w-7xl mx-auto px-5 sm:px-8 w-full">
+      <div class="grid lg:grid-cols-12 gap-14 lg:gap-10 items-center">
+        
+        <div class="lg:col-span-6">
+          <div class="flex items-center gap-3 mb-8">
+            <div class="line-gold"></div>
+            <span class="text-[11px] tracking-[0.3em] uppercase text-gold-400/90">One Brand · Four Souls</span>
+          </div>
+
+          <h1 class="font-serif text-[2.9rem] sm:text-5xl md:text-6xl lg:text-[4rem] leading-[1.08] font-medium mb-7">
+            We Build<br>
+            <span class="text-gold italic">Your Dream Home</span>
+          </h1>
+
+          <p class="text-white/45 text-[15px] sm:text-base leading-relaxed max-w-md mb-11 font-light">
+            From structure to interiors, from precision fabrication to custom furniture — 
+            everything under one trusted brand.
+          </p>
+
+          <div class="flex flex-col sm:flex-row gap-4 mb-16">
+            <a href="#calculator" class="btn-gold px-9 py-4 rounded-full text-[13px] text-center tracking-wider uppercase">
+              Estimate Cost
+            </a>
+            <a href="#projects" class="btn-outline px-9 py-4 rounded-full text-[13px] text-center tracking-wider uppercase">
+              View Projects
+            </a>
+          </div>
+
+          <div class="flex gap-12 sm:gap-16">
+            <div>
+              <div class="font-serif text-3xl sm:text-4xl text-gold-400">15+</div>
+              <div class="text-[10px] tracking-[0.2em] text-white/35 uppercase mt-1.5">Years</div>
+            </div>
+            <div>
+              <div class="font-serif text-3xl sm:text-4xl text-gold-400">500+</div>
+              <div class="text-[10px] tracking-[0.2em] text-white/35 uppercase mt-1.5">Homes</div>
+            </div>
+            <div>
+              <div class="font-serif text-3xl sm:text-4xl text-gold-400">100%</div>
+              <div class="text-[10px] tracking-[0.2em] text-white/35 uppercase mt-1.5">Satisfaction</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="lg:col-span-6 relative">
+          <div class="relative rounded-2xl overflow-hidden border border-white/[0.06] shadow-[0_0_80px_rgba(212,175,55,0.06)]">
+            <img src="https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?w=1000&q=90" 
+                 alt="Luxury home" class="w-full h-[400px] sm:h-[500px] lg:h-[560px] object-cover">
+            <div class="absolute inset-0 bg-gradient-to-t from-black/75 via-transparent to-transparent"></div>
+            <div class="absolute bottom-6 left-6 right-6 sm:left-7 sm:right-auto sm:w-72">
+              <div class="glass-gold rounded-xl p-5 sm:p-6">
+                <p class="text-[10px] tracking-[0.25em] uppercase text-gold-400/80 mb-1.5">Starting From</p>
+                <p class="font-serif text-2xl sm:text-3xl text-white">₹1,576 <span class="text-sm text-white/45 font-sans font-light">/ sq.ft</span></p>
+                <p class="text-xs text-white/35 mt-1.5">Group Houses & Apartments</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- BRAND STRIP -->
+  <section class="py-12 border-y border-white/[0.04]">
+    <div class="max-w-7xl mx-auto px-5 text-center">
+      <p class="font-serif text-2xl sm:text-3xl tracking-wide">
+        <span class="text-gold">JAYA VI JAYA NIRMAN</span>
+      </p>
+      <p class="text-[11px] tracking-[0.35em] uppercase text-white/30 mt-2">
+        Turnkey Civil Contractor · Interior Inside
+      </p>
+    </div>
+  </section>
+
+  <!-- COST ESTIMATOR -->
+  <section id="calculator" class="py-24 sm:py-32">
+    <div class="max-w-7xl mx-auto px-5 sm:px-8">
+      <div class="text-center mb-14 sm:mb-16">
+        <div class="flex items-center justify-center gap-3 mb-5">
+          <div class="line-gold"></div>
+          <p class="text-[11px] tracking-[0.3em] uppercase text-gold-500">Cost Estimator</p>
+          <div class="line-gold"></div>
+        </div>
+        <h2 class="font-serif text-4xl sm:text-5xl font-medium">
+          Estimate Your <span class="text-gold italic">Budget</span>
+        </h2>
+        <p class="text-white/40 text-sm mt-4 max-w-md mx-auto">
+          Get an indicative cost in seconds. Final quote after site discussion.
+        </p>
+      </div>
+
+      <div class="grid lg:grid-cols-5 gap-8 lg:gap-10 max-w-6xl mx-auto">
+        
+        <!-- Left: Form -->
+        <div class="lg:col-span-3 space-y-8">
+          
+          <!-- 1. Package -->
+          <div>
+            <p class="text-[11px] tracking-[0.2em] uppercase text-white/40 mb-4">1. Select Service Package</p>
+            <div class="space-y-3" id="packageOptions">
+              <label class="pkg-option selected flex items-center justify-between gap-4 rounded-xl px-5 py-4">
+                <div class="flex items-center gap-3">
+                  <input type="radio" name="package" value="1576" data-name="Civil Construction Only" checked class="w-4 h-4">
+                  <div>
+                    <p class="text-sm text-white/90">Civil Construction Only</p>
+                    <p class="text-xs text-white/35 mt-0.5">Standalone & Group Houses</p>
+                  </div>
+                </div>
+                <span class="text-sm text-gold-400 whitespace-nowrap">₹1,576/sq.ft</span>
+              </label>
+
+              <label class="pkg-option flex items-center justify-between gap-4 rounded-xl px-5 py-4">
+                <div class="flex items-center gap-3">
+                  <input type="radio" name="package" value="1250" data-name="Luxury Interiors Only" class="w-4 h-4">
+                  <div>
+                    <p class="text-sm text-white/90">Luxury Interiors Only</p>
+                    <p class="text-xs text-white/35 mt-0.5">Kitchens, Wardrobes, Ceilings</p>
+                  </div>
+                </div>
+                <span class="text-sm text-gold-400 whitespace-nowrap">₹1,250/sq.ft</span>
+              </label>
+
+              <label class="pkg-option flex items-center justify-between gap-4 rounded-xl px-5 py-4">
+                <div class="flex items-center gap-3">
+                  <input type="radio" name="package" value="2840" data-name="Complete Turnkey (Build + Interior)" class="w-4 h-4">
+                  <div>
+                    <p class="text-sm text-white/90">Complete Turnkey (Build + Interior)</p>
+                    <p class="text-xs text-white/35 mt-0.5">Full Structure + Interior Combo</p>
+                  </div>
+                </div>
+                <span class="text-sm text-gold-400 whitespace-nowrap">₹2,840/sq.ft</span>
+              </label>
+            </div>
+          </div>
+
+          <!-- 2. City -->
+          <div>
+            <p class="text-[11px] tracking-[0.2em] uppercase text-white/40 mb-4">2. Select Region / City</p>
+            <select id="citySelect" class="w-full bg-white/[0.03] border border-white/10 rounded-xl px-5 py-4 text-sm text-white/80 focus:outline-none focus:border-gold-500/40 appearance-none">
+              <option value="Hyderabad">Hyderabad / Secunderabad (Telangana)</option>
+              <option value="Khammam">Khammam</option>
+              <option value="Warangal">Warangal</option>
+              <option value="Vijayawada">Vijayawada</option>
+              <option value="Kodad">Kodad</option>
+              <option value="Other">Other (Telangana / AP)</option>
+            </select>
+          </div>
+
+          <!-- 3. Area -->
+          <div>
+            <div class="flex items-center justify-between mb-4">
+              <p class="text-[11px] tracking-[0.2em] uppercase text-white/40">3. Built-up Area</p>
+              <p class="text-sm text-gold-400 font-medium"><span id="areaValue">500</span> SQ.FT</p>
+            </div>
+            <input type="range" id="areaSlider" min="500" max="10000" step="50" value="500" class="w-full">
+            <div class="flex justify-between text-[10px] text-white/25 mt-2 tracking-wide">
+              <span>500 sq.ft</span>
+              <span>5,000 sq.ft</span>
+              <span>10,000+ sq.ft</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Right: Result Card -->
+        <div class="lg:col-span-2">
+          <div class="sticky top-28 rounded-2xl bg-[#0C0C0C] border border-white/10 p-7 sm:p-8">
+            <p class="text-[10px] tracking-[0.25em] uppercase text-gold-400/80 mb-3">Estimated Budget</p>
+            <p class="font-serif text-4xl sm:text-5xl text-white mb-2" id="totalCost">₹7,88,000</p>
+            <p class="text-xs text-white/35 mb-6 leading-relaxed">Estimated indicative cost based on standard specs.</p>
+            
+            <div class="space-y-2.5 text-sm border-t border-white/5 pt-5 mb-7">
+              <div class="flex justify-between">
+                <span class="text-white/40">Package Rate</span>
+                <span class="text-white/80" id="rateDisplay">₹1,576 / sq.ft</span>
+              </div>
+              <div class="flex justify-between">
+                <span class="text-white/40">Built-up Area</span>
+                <span class="text-white/80" id="areaDisplay">500 sq.ft</span>
+              </div>
+              <div class="flex justify-between">
+                <span class="text-white/40">Tagged City</span>
+                <span class="text-white/80" id="cityDisplay">Hyderabad</span>
+              </div>
+            </div>
+
+            <a id="whatsappEstimate" href="#" target="_blank"
+               class="flex items-center justify-center gap-2 w-full bg-green-600 hover:bg-green-500 text-white py-4 rounded-xl text-sm font-medium tracking-wide transition">
+              <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.435 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+              Send Estimate to WhatsApp
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PROJECTS -->
+  <section id="projects" class="py-24 sm:py-32 bg-royal-800 border-y border-white/[0.03]">
+    <div class="max-w-7xl mx-auto px-5 sm:px-8">
+      <div class="text-center mb-16 sm:mb-20">
+        <div class="flex items-center justify-center gap-3 mb-5">
+          <div class="line-gold"></div>
+          <p class="text-[11px] tracking-[0.3em] uppercase text-gold-500">Selected Works</p>
+          <div class="line-gold"></div>
+        </div>
+        <h2 class="font-serif text-4xl sm:text-5xl font-medium">
+          Our <span class="text-gold italic">Projects</span>
+        </h2>
+      </div>
+
+      <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-5 sm:gap-6">
+        <div class="project-card group relative rounded-2xl overflow-hidden border border-white/[0.05] aspect-[4/5]">
+          <img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=700&q=85" alt="Modern Group Housing" class="w-full h-full object-cover">
+          <div class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/20 to-transparent"></div>
+          <div class="absolute bottom-0 left-0 right-0 p-6">
+            <p class="text-[10px] tracking-[0.2em] uppercase text-gold-400 mb-1.5">Residential</p>
+            <h3 class="font-serif text-xl">Modern Group Housing</h3>
+            <p class="text-xs text-white/45 mt-1">Hyderabad</p>
+          </div>
+        </div>
+        <div class="project-card group relative rounded-2xl overflow-hidden border border-white/[0.05] aspect-[4/5]">
+          <img src="https://images.unsplash.com/photo-1613490493576-7fde63acd811?w=700&q=85" alt="Luxury Villa" class="w-full h-full object-cover">
+          <div class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/20 to-transparent"></div>
+          <div class="absolute bottom-0 left-0 right-0 p-6">
+            <p class="text-[10px] tracking-[0.2em] uppercase text-gold-400 mb-1.5">Villa</p>
+            <h3 class="font-serif text-xl">Luxury Villa Estate</h3>
+            <p class="text-xs text-white/45 mt-1">Khammam</p>
+          </div>
+        </div>
+        <div class="project-card group relative rounded-2xl overflow-hidden border border-white/[0.05] aspect-[4/5]">
+          <img src="https://images.unsplash.com/photo-1618221195710-dd6b41faaea6?w=700&q=85" alt="Interiors" class="w-full h-full object-cover">
+          <div class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/20 to-transparent"></div>
+          <div class="absolute bottom-0 left-0 right-0 p-6">
+            <p class="text-[10px] tracking-[0.2em] uppercase text-gold-400 mb-1.5">Interiors</p>
+            <h3 class="font-serif text-xl">Contemporary Living</h3>
+            <p class="text-xs text-white/45 mt-1">Warangal</p>
+          </div>
+        </div>
+        <div class="project-card group relative rounded-2xl overflow-hidden border border-white/[0.05] aspect-[4/5]">
+          <img src="https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?w=700&q=85" alt="Apartment" class="w-full h-full object-cover">
+          <div class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/20 to-transparent"></div>
+          <div class="absolute bottom-0 left-0 right-0 p-6">
+            <p class="text-[10px] tracking-[0.2em] uppercase text-gold-400 mb-1.5">Apartment</p>
+            <h3 class="font-serif text-xl">Standalone Residence</h3>
+            <p class="text-xs text-white/45 mt-1">Vijayawada</p>
+          </div>
+        </div>
+        <div class="project-card group relative rounded-2xl overflow-hidden border border-white/[0.05] aspect-[4/5]">
+          <img src="https://images.unsplash.com/photo-1600566753190-17f0baa2a6c3?w=700&q=85" alt="Premium Interior" class="w-full h-full object-cover">
+          <div class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/20 to-transparent"></div>
+          <div class="absolute bottom-0 left-0 right-0 p-6">
+            <p class="text-[10px] tracking-[0.2em] uppercase text-gold-400 mb-1.5">Interiors</p>
+            <h3 class="font-serif text-xl">Elegant Living Spaces</h3>
+            <p class="text-xs text-white/45 mt-1">Secunderabad</p>
+          </div>
+        </div>
+        <div class="project-card group relative rounded-2xl overflow-hidden border border-white/[0.05] aspect-[4/5]">
+          <img src="https://images.unsplash.com/photo-1600047509807-ba8f99d36b0e?w=700&q=85" alt="Dream Home" class="w-full h-full object-cover">
+          <div class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/20 to-transparent"></div>
+          <div class="absolute bottom-0 left-0 right-0 p-6">
+            <p class="text-[10px] tracking-[0.2em] uppercase text-gold-400 mb-1.5">Turnkey</p>
+            <h3 class="font-serif text-xl">Complete Dream Home</h3>
+            <p class="text-xs text-white/45 mt-1">Kodad</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SERVICES -->
+  <section id="services" class="py-24 sm:py-32">
+    <div class="max-w-7xl mx-auto px-5 sm:px-8">
+      <div class="text-center mb-16">
+        <div class="flex items-center justify-center gap-3 mb-5">
+          <div class="line-gold"></div>
+          <p class="text-[11px] tracking-[0.3em] uppercase text-gold-500">What We Offer</p>
+          <div class="line-gold"></div>
+        </div>
+        <h2 class="font-serif text-4xl sm:text-5xl font-medium">
+          Complete <span class="text-gold italic">Turnkey</span> Solutions
+        </h2>
+      </div>
+
+      <div class="grid md:grid-cols-2 gap-6 lg:gap-8">
+        <div class="group relative rounded-2xl overflow-hidden border border-white/[0.05]">
+          <img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=900&q=85" alt="Group Houses" class="w-full h-72 sm:h-80 object-cover group-hover:scale-105 transition duration-700">
+          <div class="absolute inset-0 bg-gradient-to-t from-black via-black/50 to-transparent"></div>
+          <div class="absolute bottom-0 left-0 right-0 p-6 sm:p-8">
+            <h3 class="font-serif text-2xl mb-2">Group Houses & Apartments</h3>
+            <p class="text-sm text-white/45 mb-4">Quality construction from ₹1,576 / sq.ft</p>
+          </div>
+        </div>
+        <div class="group relative rounded-2xl overflow-hidden border border-white/[0.05]">
+          <img src="https://images.unsplash.com/photo-1618221195710-dd6b41faaea6?w=900&q=85" alt="Interiors" class="w-full h-72 sm:h-80 object-cover group-hover:scale-105 transition duration-700">
+          <div class="absolute inset-0 bg-gradient-to-t from-black via-black/50 to-transparent"></div>
+          <div class="absolute bottom-0 left-0 right-0 p-6 sm:p-8">
+            <h3 class="font-serif text-2xl mb-2">Luxury Interiors</h3>
+            <p class="text-sm text-white/45 mb-4">Complete interiors from ₹2,840 / sq.ft</p>
+          </div>
+        </div>
+        <div class="md:col-span-2 group relative rounded-2xl overflow-hidden border border-white/[0.05]">
+          <img src="https://images.unsplash.com/photo-1613490493576-7fde63acd811?w=1400&q=85" alt="Premium Villa" class="w-full h-80 sm:h-96 object-cover group-hover:scale-105 transition duration-700">
+          <div class="absolute inset-0 bg-gradient-to-r from-black/90 via-black/50 to-transparent"></div>
+          <div class="absolute bottom-0 left-0 p-6 sm:p-10 max-w-lg">
+            <p class="text-[10px] tracking-[0.25em] uppercase text-gold-400 mb-3">Premium Collection</p>
+            <h3 class="font-serif text-3xl sm:text-4xl mb-3">Dream Premium Villas</h3>
+            <p class="text-sm text-white/45 mb-6">Luxurious interiors, home automation & complete furnishing from ₹3,500 / sq.ft.</p>
+            <a href="https://wa.me/917386946326?text=Hi%2C%20interested%20in%20Premium%20Villa." target="_blank" class="text-gold-400 text-sm hover:text-gold-300 transition">Enquire Now →</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PRICING -->
+  <section id="pricing" class="py-24 sm:py-32 bg-royal-800 border-y border-white/[0.03]">
+    <div class="max-w-7xl mx-auto px-5 sm:px-8">
+      <div class="text-center mb-16">
+        <div class="flex items-center justify-center gap-3 mb-5">
+          <div class="line-gold"></div>
+          <p class="text-[11px] tracking-[0.3em] uppercase text-gold-500">Transparent Pricing</p>
+          <div class="line-gold"></div>
+        </div>
+        <h2 class="font-serif text-4xl sm:text-5xl font-medium">
+          Starting <span class="text-gold italic">Prices</span>
+        </h2>
+      </div>
+
+      <div class="grid md:grid-cols-3 gap-5 sm:gap-6 max-w-5xl mx-auto">
+        <div class="glass rounded-2xl p-7 sm:p-8 flex flex-col">
+          <h3 class="text-sm text-white/55 mb-5">Group Houses & Apartments</h3>
+          <div class="mb-1"><span class="font-serif text-4xl text-gold">₹1,576</span><span class="text-white/35 text-sm"> / sq.ft</span></div>
+          <p class="text-xs text-white/30 mb-8">Civil construction</p>
+          <a href="https://wa.me/917386946326?text=Quote%20for%20Group%20House" target="_blank" class="mt-auto btn-outline text-center py-3.5 rounded-full text-[11px] tracking-wider uppercase">Get Quote</a>
+        </div>
+        <div class="relative rounded-2xl p-7 sm:p-8 flex flex-col border border-gold-500/25 bg-gradient-to-b from-gold-500/[0.08] to-transparent">
+          <div class="absolute -top-3 left-1/2 -translate-x-1/2 bg-gold-500 text-royal-900 text-[10px] font-semibold tracking-[0.15em] uppercase px-4 py-1 rounded-full">Most Popular</div>
+          <h3 class="text-sm text-white/55 mb-5">Home with Interiors</h3>
+          <div class="mb-1"><span class="font-serif text-4xl text-gold">₹2,840</span><span class="text-white/35 text-sm"> / sq.ft</span></div>
+          <p class="text-xs text-white/30 mb-8">Complete interiors package</p>
+          <a href="https://wa.me/917386946326?text=Quote%20for%20Home%20with%20Interiors" target="_blank" class="mt-auto btn-gold text-center py-3.5 rounded-full text-[11px] tracking-wider uppercase">Get Quote</a>
+        </div>
+        <div class="glass rounded-2xl p-7 sm:p-8 flex flex-col">
+          <h3 class="text-sm text-white/55 mb-5">Premium Villa</h3>
+          <div class="mb-1"><span class="font-serif text-4xl text-gold">₹3,500</span><span class="text-white/35 text-sm"> / sq.ft</span></div>
+          <p class="text-xs text-white/30 mb-8">Luxury + furnishing onwards</p>
+          <a href="https://wa.me/917386946326?text=Quote%20for%20Premium%20Villa" target="_blank" class="mt-auto btn-outline text-center py-3.5 rounded-full text-[11px] tracking-wider uppercase">Get Quote</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- AREAS -->
+  <section class="py-14 border-b border-white/[0.04]">
+    <div class="max-w-7xl mx-auto px-5 text-center">
+      <p class="text-[11px] tracking-[0.25em] uppercase text-white/30 mb-6">Serving Telangana & Andhra Pradesh</p>
+      <div class="flex flex-wrap justify-center gap-3">
+        <span class="glass px-5 py-2 rounded-full text-xs text-white/45">Hyderabad</span>
+        <span class="glass px-5 py-2 rounded-full text-xs text-white/45">Secunderabad</span>
+        <span class="glass px-5 py-2 rounded-full text-xs text-white/45">Khammam</span>
+        <span class="glass px-5 py-2 rounded-full text-xs text-white/45">Warangal</span>
+        <span class="glass px-5 py-2 rounded-full text-xs text-white/45">Vijayawada</span>
+        <span class="glass px-5 py-2 rounded-full text-xs text-white/45">Kodad</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <section id="contact" class="py-24 sm:py-32">
+    <div class="max-w-7xl mx-auto px-5 sm:px-8">
+      <div class="grid lg:grid-cols-2 gap-14 lg:gap-20 items-start">
+        <div>
+          <div class="flex items-center gap-3 mb-5">
+            <div class="line-gold"></div>
+            <p class="text-[11px] tracking-[0.3em] uppercase text-gold-500">Get In Touch</p>
+          </div>
+          <h2 class="font-serif text-4xl sm:text-5xl font-medium mb-6 leading-tight">
+            Let’s Build Your<br><span class="text-gold italic">Dream</span>
+          </h2>
+          <p class="text-white/40 text-sm leading-relaxed mb-10 max-w-md">
+            Share your requirements and our team will respond within hours.
+          </p>
+          <a href="https://wa.me/917386946326?text=Hi%20JAYA%20VI%20JAYA%20NIRMAN%2C%20I%20want%20to%20discuss%20my%20project." target="_blank"
+             class="inline-flex items-center gap-3 bg-green-600 hover:bg-green-500 text-white font-medium px-7 py-4 rounded-full transition text-sm mb-10">
+            Chat on WhatsApp
+          </a>
+          <div class="space-y-3 text-sm text-white/40">
+            <p>+91 73869 46326</p>
+            <p>Telangana & Andhra Pradesh</p>
+          </div>
+        </div>
+
+        <div class="glass rounded-2xl p-7 sm:p-9">
+          <h3 class="font-serif text-2xl mb-6">Request a Free Quote</h3>
+          <form action="https://formspree.io/f/YOUR_FORM_ID" method="POST" class="space-y-5">
+            <div>
+              <label class="block text-[10px] tracking-[0.15em] text-white/35 mb-2 uppercase">Full Name *</label>
+              <input type="text" name="name" required class="w-full bg-white/[0.03] border border-white/10 rounded-xl px-4 py-3.5 text-sm focus:outline-none focus:border-gold-500/40 transition placeholder:text-white/20" placeholder="Your name">
+            </div>
+            <div>
+              <label class="block text-[10px] tracking-[0.15em] text-white/35 mb-2 uppercase">Phone / WhatsApp *</label>
+              <input type="tel" name="phone" required class="w-full bg-white/[0.03] border border-white/10 rounded-xl px-4 py-3.5 text-sm focus:outline-none focus:border-gold-500/40 transition placeholder:text-white/20" placeholder="+91 XXXXX XXXXX">
+            </div>
+            <div>
+              <label class="block text-[10px] tracking-[0.15em] text-white/35 mb-2 uppercase">Interested In</label>
+              <select name="service" class="w-full bg-white/[0.03] border border-white/10 rounded-xl px-4 py-3.5 text-sm focus:outline-none focus:border-gold-500/40 appearance-none text-white/60">
+                <option>Construction</option>
+                <option>Interiors</option>
+                <option>Premium Villa</option>
+                <option>Complete Package</option>
+              </select>
+            </div>
+            <div>
+              <label class="block text-[10px] tracking-[0.15em] text-white/35 mb-2 uppercase">Message</label>
+              <textarea name="message" rows="3" class="w-full bg-white/[0.03] border border-white/10 rounded-xl px-4 py-3.5 text-sm focus:outline-none focus:border-gold-500/40 resize-none placeholder:text-white/20" placeholder="Plot size, location, budget..."></textarea>
+            </div>
+            <button type="submit" class="w-full btn-gold py-4 rounded-full text-[12px] tracking-wider uppercase">Submit Enquiry</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="border-t border-white/[0.04] py-14">
+    <div class="max-w-7xl mx-auto px-5 text-center">
+      <p class="font-serif text-2xl tracking-wide text-gold mb-2">JAYA VI JAYA NIRMAN</p>
+      <p class="text-[10px] tracking-[0.3em] uppercase text-white/25 mb-6">Turnkey Civil Contractor · Interior Inside</p>
+      <div class="w-16 h-px bg-gradient-to-r from-transparent via-gold-500/40 to-transparent mx-auto mb-6"></div>
+      <p class="text-xs text-white/25 mb-3">© 2026 JAYA VI JAYA NIRMAN. All rights reserved.</p>
+      <a href="https://wa.me/917386946326" target="_blank" class="text-xs text-green-500/70 hover:text-green-400 transition">+91 73869 46326</a>
+    </div>
+  </footer>
+
+  <!-- Floating WhatsApp -->
+  <a href="https://wa.me/917386946326?text=Hi%20JAYA%20VI%20JAYA%20NIRMAN%2C%20I%27m%20interested." target="_blank"
+     class="fixed bottom-5 right-5 z-50 w-14 h-14 bg-green-500 hover:bg-green-400 rounded-full flex items-center justify-center shadow-lg shadow-green-500/25 transition hover:scale-110"
+     aria-label="WhatsApp">
+    <svg class="w-7 h-7 text-white" fill="currentColor" viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.435 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+  </a>
+
+  <script>
+    // Mobile menu
+    const btn = document.getElementById('menuBtn');
+    const menu = document.getElementById('mobileMenu');
+    btn.addEventListener('click', () => menu.classList.toggle('open'));
+    menu.querySelectorAll('a').forEach(l => l.addEventListener('click', () => menu.classList.remove('open')));
+
+    // Cost Calculator
+    const areaSlider = document.getElementById('areaSlider');
+    const areaValue = document.getElementById('areaValue');
+    const totalCost = document.getElementById('totalCost');
+    const rateDisplay = document.getElementById('rateDisplay');
+    const areaDisplay = document.getElementById('areaDisplay');
+    const cityDisplay = document.getElementById('cityDisplay');
+    const citySelect = document.getElementById('citySelect');
+    const whatsappBtn = document.getElementById('whatsappEstimate');
+    const pkgOptions = document.querySelectorAll('.pkg-option');
+
+    function formatINR(n) {
+      return '₹' + n.toLocaleString('en-IN');
+    }
+
+    function updateCalc() {
+      const rate = parseInt(document.querySelector('input[name="package"]:checked').value);
+      const area = parseInt(areaSlider.value);
+      const city = citySelect.value;
+      const pkgName = document.querySelector('input[name="package"]:checked').dataset.name;
+      const total = rate * area;
+
+      areaValue.textContent = area.toLocaleString('en-IN');
+      totalCost.textContent = formatINR(total);
+      rateDisplay.textContent = formatINR(rate) + ' / sq.ft';
+      areaDisplay.textContent = area.toLocaleString('en-IN') + ' sq.ft';
+      cityDisplay.textContent = city;
+
+      const msg = encodeURIComponent(
+        `Hi JAYA VI JAYA NIRMAN,\n\nI used the Cost Estimator on your website:\n\n• Package: ${pkgName}\n• Rate: ₹${rate.toLocaleString('en-IN')}/sq.ft\n• Area: ${area.toLocaleString('en-IN')} sq.ft\n• City: ${city}\n• Estimated Budget: ${formatINR(total)}\n\nPlease share a detailed quote.`
+      );
+      whatsappBtn.href = `https://wa.me/917386946326?text=${msg}`;
+    }
+
+    areaSlider.addEventListener('input', updateCalc);
+    citySelect.addEventListener('change', updateCalc);
+
+    pkgOptions.forEach(opt => {
+      opt.addEventListener('click', () => {
+        pkgOptions.forEach(o => o.classList.remove('selected'));
+        opt.classList.add('selected');
+        opt.querySelector('input').checked = true;
+        updateCalc();
+      });
+    });
+
+    updateCalc();
+  </script>
+</body>
+</html>
